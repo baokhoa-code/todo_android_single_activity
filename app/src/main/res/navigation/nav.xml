@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/todoListFragment">
+
+    <fragment
+        android:id="@+id/todoListFragment"
+        android:name="com.example.todo_app.views.java.fragments.TodoListFragment"
+        android:label="Main screen"
+        tools:layout="@layout/fragment_todo_list">
+        <action
+            android:id="@+id/action_todoListFragment_to_todoAddFragment"
+            app:destination="@id/todoAddFragment" />
+        <action
+            android:id="@+id/action_todoListFragment_to_todoEditFragment"
+            app:destination="@id/todoEditFragment" />
+        <action
+            android:id="@+id/action_todoListFragment_to_navActivity"
+            app:destination="@id/navActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/todoAddFragment"
+        android:name="com.example.todo_app.views.java.fragments.TodoAddFragment"
+        android:label="Add todo screen"
+        tools:layout="@layout/fragment_todo_add">
+        <action
+            android:id="@+id/action_todoAddFragment_to_todoListFragment"
+            app:destination="@id/todoListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/todoEditFragment"
+        android:name="com.example.todo_app.views.java.fragments.TodoEditFragment"
+        android:label="Edit todo screen"
+        tools:layout="@layout/fragment_todo_edit">
+        <action
+            android:id="@+id/action_todoEditFragment_to_todoListFragment"
+            app:destination="@id/todoListFragment" />
+    </fragment>
+
+    <activity
+        android:id="@+id/navActivity"
+        android:name="com.example.todo_app.views.NavActivity"
+        android:label="NavActivity" />
+
+</navigation>
